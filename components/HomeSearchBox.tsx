@@ -16,12 +16,12 @@ export const HomeSearchBox: React.FC = () => {
     : [];
 
   return (
-    <div className="relative px-4 md:px-6 pb-2">
+    <div className="relative">
       <div className="relative">
-        <Search className="absolute left-4 top-1/2 -translate-y-1/2 h-5 w-5 text-primary/60" />
+        <Search className="absolute left-3 top-1/2 -translate-y-1/2 h-5 w-5 text-muted-foreground" />
         <Input
           type="text"
-          placeholder="Search for products..."
+          placeholder="Search products..."
           value={searchQuery}
           onChange={(e) => {
             setSearchQuery(e.target.value);
@@ -29,7 +29,7 @@ export const HomeSearchBox: React.FC = () => {
           }}
           onFocus={() => setShowResults(true)}
           onBlur={() => setTimeout(() => setShowResults(false), 200)}
-          className="pl-12 pr-4 h-14 border-2 border-primary/30 focus-visible:ring-2 focus-visible:ring-primary focus-visible:border-primary rounded-2xl shadow-sm bg-background/50 backdrop-blur-sm text-base placeholder:text-muted-foreground/60"
+          className="pl-10 h-12 border-2 border-[#166534] focus-visible:ring-[#166534]"
         />
       </div>
 

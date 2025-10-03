@@ -23,7 +23,7 @@ export const BannerCarousel: React.FC = () => {
 
   return (
     <section className="w-full overflow-hidden">
-      <div className="relative w-full h-64 md:h-64">
+      <div className="relative w-full h-40 md:h-64">
         {banners.map((banner, index) => (
           <div
             key={index}
@@ -34,7 +34,7 @@ export const BannerCarousel: React.FC = () => {
             <img
               src={banner}
               alt={`Banner ${index + 1}`}
-              className="w-full h-full object-contain md:object-cover"
+              className="w-full h-full object-cover"
             />
           </div>
         ))}

@@ -36,33 +36,33 @@ interface CategoryScrollProps {
 
 const categoryIcons: Record<string, string> = {
   'All': allIcon,
-  'Electronics': electricsIcon,
+  'Electrics': electricsIcon,
   'Men': menIcon,
   'Women': womenIcon,
-  'Kids': childrenIcon,
+  'Children': childrenIcon,
   'Fashion': fashionIcon,
-  'Beauty': beautyIcon,
+  'Beauty & Personal Care': beautyIcon,
   'Books': booksIcon,
   'Toys': toysIcon,
-  'Sports': sportsIcon,
-  'Home': homeKitchenIcon,
+  'Sports & Outdoors': sportsIcon,
+  'Home & Kitchen': homeKitchenIcon,
   'Groceries': groceriesIcon,
-  'Health': healthIcon,
-  'Auto': automotiveIcon,
+  'Health & Wellness': healthIcon,
+  'Automotive': automotiveIcon,
   'Jewelry': jewelryIcon,
   'Shoes': shoesIcon,
-  'Bags': bagsIcon,
-  'Pets': petsIcon,
-  'Baby': babyIcon,
-  'Office': officeIcon,
+  'Bags & Luggage': bagsIcon,
+  'Pet Supplies': petsIcon,
+  'Baby Care': babyIcon,
+  'Office Supplies': officeIcon,
   'Medicine': medicineIcon,
-  'Code': codeIcon,
-  'Digital': digitalIcon,
+  'Website Source Code': codeIcon,
+  'Digital Products': digitalIcon,
   'Furniture': furnitureIcon,
-  'Garden': gardeningIcon,
-  'Music': musicIcon,
-  'Camera': cameraIcon,
-  'Tools': toolsIcon,
+  'Gardening': gardeningIcon,
+  'Music Instruments': musicIcon,
+  'Camera & Photography': cameraIcon,
+  'Tools & Hardware': toolsIcon,
 };
 
 export const CategoryScroll: React.FC<CategoryScrollProps> = ({
@@ -78,14 +78,14 @@ export const CategoryScroll: React.FC<CategoryScrollProps> = ({
   const CategoryButton = ({ category }: { category: string }) => (
     <button
       onClick={() => onCategoryChange(category)}
-      className={`flex flex-col items-center gap-1.5 min-w-[70px] p-2 rounded-xl transition-all ${
+      className={`flex flex-col items-center gap-2 min-w-[80px] p-3 rounded-xl transition-all ${
         selectedCategory === category
           ? 'bg-primary/10 shadow-md scale-105'
           : 'hover:bg-muted'
       }`}
     >
       <div 
-        className={`w-12 h-12 rounded-full overflow-hidden shadow-sm transition-all ${
+        className={`w-14 h-14 rounded-full overflow-hidden shadow-sm transition-all ${
           selectedCategory === category 
             ? 'ring-2 ring-primary ring-offset-2' 
             : ''
@@ -98,7 +98,7 @@ export const CategoryScroll: React.FC<CategoryScrollProps> = ({
         />
       </div>
       <span 
-        className={`text-[10px] font-medium text-center leading-tight ${
+        className={`text-xs font-medium text-center leading-tight ${
           selectedCategory === category
             ? 'text-primary font-semibold'
             : 'text-foreground'
@@ -110,11 +110,11 @@ export const CategoryScroll: React.FC<CategoryScrollProps> = ({
   );
 
   return (
-    <div className="py-2 bg-background">
-      <div className="space-y-2">
+    <div className="py-4 bg-background">
+      <div className="space-y-3">
         {/* First Row */}
         <div className="overflow-x-auto scrollbar-hide">
-          <div className="flex gap-2 px-4 md:px-6 min-w-max">
+          <div className="flex gap-3 px-4 md:px-6 min-w-max">
             {firstRow.map((category) => (
               <CategoryButton key={category} category={category} />
             ))}
@@ -123,7 +123,7 @@ export const CategoryScroll: React.FC<CategoryScrollProps> = ({
         
         {/* Second Row */}
         <div className="overflow-x-auto scrollbar-hide">
-          <div className="flex gap-2 px-4 md:px-6 min-w-max">
+          <div className="flex gap-3 px-4 md:px-6 min-w-max">
             {secondRow.map((category) => (
               <CategoryButton key={category} category={category} />
             ))}
