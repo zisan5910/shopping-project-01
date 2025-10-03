@@ -26,12 +26,12 @@ const Home: React.FC = () => {
         <BannerCarousel />
 
         {/* Search Box */}
-        <section className="container mx-auto px-4 py-6">
+        <section className="container mx-auto px-4 py-4">
           <HomeSearchBox />
         </section>
 
         {/* Categories */}
-        <section className="py-4">
+        <section className="py-2">
           <CategoryScroll
             categories={categories}
             selectedCategory={selectedCategory}
